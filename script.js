@@ -400,4 +400,207 @@ function lazyLoadImages() {
 // Initialize lazy loading
 lazyLoadImages();
 
+// Blog Article Display Function
+function showBlogArticle(articleId) {
+    const articles = {
+        'school-growth': {
+            title: '5 Essential Strategies for School Growth in 2026',
+            content: `
+                <h2>5 Essential Strategies for School Growth in 2026</h2>
+                <p><strong>Introduction:</strong> In today's competitive educational landscape, schools need strategic approaches to achieve sustainable growth. Based on our experience working with over 100+ educational institutions, we've identified five key strategies that successful schools are implementing.</p>
+                
+                <h3>1. Digital Transformation Integration</h3>
+                <p>Schools that successfully integrate digital tools see 40% higher student engagement rates. This includes implementing learning management systems, digital assessment tools, and parent communication platforms.</p>
+                
+                <h3>2. Teacher Development Programs</h3>
+                <p>Investing in continuous teacher training leads to 25% improvement in student outcomes. Focus on modern teaching methodologies, classroom management, and subject-specific training.</p>
+                
+                <h3>3. Data-Driven Decision Making</h3>
+                <p>Schools using educational data analytics make better-informed decisions about curriculum, resource allocation, and student support interventions.</p>
+                
+                <h3>4. Community Engagement</h3>
+                <p>Strong parent and community involvement correlates with higher student achievement and school reputation. Regular communication, parent workshops, and community events are essential.</p>
+                
+                <h3>5. Brand Building and Marketing</h3>
+                <p>Professional branding and strategic marketing help schools attract quality students and build long-term reputation in the education sector.</p>
+                
+                <p><strong>Conclusion:</strong> Implementing these strategies requires careful planning and execution. Eduvisory Consulting helps schools develop customized growth plans based on their unique needs and goals.</p>
+            `
+        },
+        'teacher-training': {
+            title: 'Transforming Teaching: Modern Training Approaches',
+            content: `
+                <h2>Transforming Teaching: Modern Training Approaches</h2>
+                <p><strong>Introduction:</strong> The educational landscape is rapidly evolving, and teacher training must adapt to meet new challenges. Modern approaches focus on practical skills, technology integration, and student-centered learning methodologies.</p>
+                
+                <h3>Blended Learning Methodologies</h3>
+                <p>Teachers today must master both traditional classroom techniques and digital teaching tools. Blended learning combines face-to-face instruction with online resources, creating a more engaging learning environment.</p>
+                
+                <h3>Assessment and Feedback Strategies</h3>
+                <p>Modern assessment goes beyond traditional tests. Teachers need skills in formative assessment, project-based evaluation, and providing constructive feedback that drives student improvement.</p>
+                
+                <h3>Classroom Management 2.0</h3>
+                <p>Today's classrooms require innovative management approaches that respect student autonomy while maintaining productive learning environments. This includes conflict resolution, inclusive teaching practices, and emotional intelligence.</p>
+                
+                <h3>Technology Integration</h3>
+                <p>Teachers must be comfortable with educational technology tools, learning management systems, and digital content creation. This includes understanding data privacy and digital citizenship.</p>
+                
+                <h3>Professional Learning Communities</h3>
+                <p>Collaborative learning among teachers creates a culture of continuous improvement. Professional learning communities provide support, share best practices, and foster innovation.</p>
+                
+                <p><strong>Conclusion:</strong> Effective teacher training is an ongoing process, not a one-time event. Schools that invest in continuous professional development see significant improvements in teaching quality and student outcomes.</p>
+            `
+        },
+        'digital-learning': {
+            title: 'Digital Transformation in Education: A Complete Guide',
+            content: `
+                <h2>Digital Transformation in Education: A Complete Guide</h2>
+                <p><strong>Introduction:</strong> Digital transformation is no longer optional for schools—it's essential for survival and growth. This comprehensive guide helps educational institutions navigate the digital landscape successfully.</p>
+                
+                <h3>Infrastructure Development</h3>
+                <p>The foundation of digital transformation includes reliable internet connectivity, adequate device access, and robust network security. Schools need to invest in hardware, software, and technical support.</p>
+                
+                <h3>Learning Management Systems</h3>
+                <p>Modern LMS platforms streamline course delivery, assignment management, and student progress tracking. Choose systems that integrate with existing tools and scale with your needs.</p>
+                
+                <h3>Digital Curriculum Development</h3>
+                <p>Transform traditional curriculum into engaging digital content. This includes interactive lessons, multimedia resources, and adaptive learning paths that cater to different learning styles.</p>
+                
+                <h3>Teacher Training and Support</h3>
+                <p>Teachers need comprehensive training and ongoing support to effectively use digital tools. Provide professional development, technical assistance, and peer mentoring programs.</p>
+                
+                <h3>Data Security and Privacy</h3>
+                <p>Protect student data and ensure compliance with educational privacy regulations. Implement robust security measures and establish clear data governance policies.</p>
+                
+                <h3>Parent and Student Portals</h3>
+                <p>Create dedicated portals for parents and students to access grades, assignments, and communication tools. This improves transparency and engagement.</p>
+                
+                <p><strong>Conclusion:</strong> Digital transformation is a journey, not a destination. Start with a clear strategy, prioritize based on impact and feasibility, and continuously evaluate and adjust your approach.</p>
+            `
+        },
+        'leadership': {
+            title: 'Building Strong Educational Leadership Teams',
+            content: `
+                <h2>Building Strong Educational Leadership Teams</h2>
+                <p><strong>Introduction:</strong> Effective leadership is the cornerstone of educational excellence. Strong leadership teams drive school improvement, teacher satisfaction, and student success.</p>
+                
+                <h3>Vision and Mission Development</h3>
+                <p>Great leaders articulate a clear vision that inspires stakeholders and guides decision-making. This involves collaborative goal-setting and regular review of progress toward objectives.</p>
+                
+                <h3>Distributed Leadership Models</h3>
+                <p>Modern educational leadership isn't about top-down control. Distributed leadership empowers teachers, staff, and even students to take ownership of school improvement initiatives.</p>
+                
+                <h3>Communication Excellence</h3>
+                <p>Effective leaders communicate clearly, consistently, and compassionately. This includes regular updates, active listening, and creating channels for feedback and dialogue.</p>
+                
+                <h3>Change Management</h3>
+                <p>Educational leaders must navigate constant change while maintaining stability. This requires strategic planning, stakeholder engagement, and flexibility in implementation.</p>
+                
+                <h3>Professional Development Leadership</h3>
+                <p>Leaders must champion continuous learning for themselves and their staff. This includes identifying training needs, providing resources, and modeling lifelong learning behaviors.</p>
+                
+                <h3>Community Relationship Building</h3>
+                <p>Strong leaders build bridges with parents, community organizations, and educational partners. These relationships provide resources, support, and opportunities for students.</p>
+                
+                <p><strong>Conclusion:</strong> Educational leadership is both an art and a science. Invest in leadership development, create supportive structures, and celebrate leadership successes throughout your organization.</p>
+            `
+        },
+        'student-success': {
+            title: 'Data-Driven Approaches to Student Success',
+            content: `
+                <h2>Data-Driven Approaches to Student Success</h2>
+                <p><strong>Introduction:</strong> Educational data provides powerful insights into student learning, allowing schools to personalize instruction and improve outcomes. Learn how to leverage data effectively.</p>
+                
+                <h3>Academic Performance Monitoring</h3>
+                <p>Track student progress through regular assessments, standardized tests, and classroom performance data. Use this information to identify learning gaps and intervention needs.</p>
+                
+                <h3>Attendance and Engagement Analytics</h3>
+                <p>Monitor attendance patterns, participation rates, and engagement indicators. Early identification of disengagement allows for timely interventions.</p>
+                
+                <h3>Behavioral and Social-Emotional Data</h3>
+                <p>Collect data on student behavior, social interactions, and emotional well-being. This holistic view supports comprehensive student development.</p>
+                
+                <h3>Learning Analytics Platforms</h3>
+                <p>Implement systems that track student interactions with digital learning resources. This data helps identify learning preferences and effective teaching strategies.</p>
+                
+                <h3>Predictive Analytics for Early Intervention</h3>
+                <p>Use statistical models to predict students at risk of academic difficulties. Early warning systems enable proactive support before problems escalate.</p>
+                
+                <h3>Data-Informed Instructional Planning</h3>
+                <p>Teachers should use assessment data to differentiate instruction, adjust pacing, and select appropriate teaching strategies for diverse learner needs.</p>
+                
+                <p><strong>Conclusion:</strong> Data-driven decision making transforms educational outcomes. Invest in data systems, train staff in data analysis, and create a culture that uses evidence to guide practice.</p>
+            `
+        },
+        'curriculum': {
+            title: 'Curriculum Design for 21st Century Learning',
+            content: `
+                <h2>Curriculum Design for 21st Century Learning</h2>
+                <p><strong>Introduction:</strong> Modern curriculum design must prepare students for an uncertain future while maintaining academic rigor and educational excellence.</p>
+                
+                <h3>Core Competencies Integration</h3>
+                <p>21st century skills—critical thinking, creativity, collaboration, and communication—should be integrated across all subject areas, not taught in isolation.</p>
+                
+                <h3>Project-Based Learning Framework</h3>
+                <p>Design curriculum around meaningful projects that connect to real-world applications. This approach increases engagement and develops practical skills.</p>
+                
+                <h3>Interdisciplinary Connections</h3>
+                <p>Break down subject silos by creating interdisciplinary units that show how different fields of knowledge connect and interact.</p>
+                
+                <h3>Technology Integration</h3>
+                <p>Curriculum should naturally incorporate digital tools and resources. This includes digital literacy, computational thinking, and responsible technology use.</p>
+                
+                <h3>Personalized Learning Paths</h3>
+                <p>Design curriculum that allows for student choice and differentiation based on learning styles, interests, and readiness levels.</p>
+                
+                <h3>Assessment Alignment</h3>
+                <p>Ensure that assessments directly measure intended learning outcomes. Use varied assessment methods to capture different types of learning and skills.</p>
+                
+                <h3>Cultural Relevance and Global Perspectives</h3>
+                <p>Curriculum should reflect diverse perspectives and prepare students for global citizenship. Include multicultural content and international viewpoints.</p>
+                
+                <p><strong>Conclusion:</strong> Curriculum design is an ongoing process of refinement and improvement. Regularly review outcomes, gather stakeholder feedback, and adjust to meet changing student needs.</p>
+            `
+        }
+    };
+    
+    const article = articles[articleId];
+    if (!article) return;
+    
+    // Create modal overlay
+    const modalOverlay = document.createElement('div');
+    modalOverlay.className = 'blog-modal-overlay';
+    modalOverlay.innerHTML = `
+        <div class="blog-modal">
+            <div class="blog-modal-content">
+                <button class="blog-modal-close" onclick="closeBlogModal()">&times;</button>
+                <div class="blog-modal-body">
+                    ${article.content}
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Add to page
+    document.body.appendChild(modalOverlay);
+    
+    // Prevent body scroll
+    document.body.style.overflow = 'hidden';
+    
+    // Close on overlay click
+    modalOverlay.addEventListener('click', (e) => {
+        if (e.target === modalOverlay) {
+            closeBlogModal();
+        }
+    });
+}
+
+function closeBlogModal() {
+    const modalOverlay = document.querySelector('.blog-modal-overlay');
+    if (modalOverlay) {
+        modalOverlay.remove();
+        document.body.style.overflow = '';
+    }
+}
+
 console.log('Eduvisory Consulting website loaded successfully!');
