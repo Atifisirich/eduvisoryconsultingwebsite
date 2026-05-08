@@ -211,6 +211,18 @@ p {
     z-index: 1;
 }
 
+.hero-logo-img {
+    max-width: 120px;
+    height: auto;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+    animation: fadeInUp 1s ease-out;
+    transition: transform 0.3s ease;
+}
+
+.hero-logo-img:hover {
+    transform: scale(1.05);
+}
+
 .hero-title {
     color: var(--alabaster-white);
     margin-bottom: 1.5rem;
