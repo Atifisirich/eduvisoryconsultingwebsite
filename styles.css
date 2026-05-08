@@ -569,6 +569,7 @@ p {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    align-items: stretch;
 }
 
 .blog-card {
@@ -578,6 +579,9 @@ p {
     box-shadow: 0 10px 30px rgba(0, 45, 98, 0.1);
     transition: all 0.3s ease;
     border: 1px solid var(--alabaster-white-dark);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .blog-card:hover {
@@ -751,6 +755,53 @@ p {
 .blog-modal-body strong {
     color: var(--text-primary);
     font-weight: 600;
+}
+
+/* Responsive Blog Design */
+@media (max-width: 768px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .blog-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .blog-modal {
+        margin: 1rem;
+        max-width: 95%;
+        max-height: 95vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .blog-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .blog-card {
+        margin-bottom: 1rem;
+    }
+    
+    .blog-modal {
+        margin: 0.5rem;
+        max-width: 98%;
+        max-height: 98vh;
+    }
+    
+    .blog-modal-body {
+        padding: 2rem;
+    }
+    
+    .blog-modal-body h2 {
+        font-size: 1.5rem;
+    }
+    
+    .blog-modal-body h3 {
+        font-size: 1.2rem;
+    }
 }
 
 /* Footer */
