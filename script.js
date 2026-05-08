@@ -1,3 +1,67 @@
+// Rotating Background Images for Hero Section - Specific School/Student/Classroom
+const heroBackgroundImages = [
+    'https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop&sat=0.6',
+    'https://images.pexels.com/photos/542883/pexels-photo-542883.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop&sat=0.6',
+    'https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop&sat=0.6',
+    'https://images.pexels.com/photos/836722/pexels-photo-836722.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop&sat=0.6',
+    'https://images.pexels.com/photos/276452/pexels-photo-276452.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop&sat=0.6',
+    'https://images.pexels.com/photos/1722183/pexels-photo-1722183.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop&sat=0.6',
+    'https://images.pexels.com/photos/301926/pexels-photo-301926.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop&sat=0.6',
+    'https://images.pexels.com/photos/267885/pexels-photo-267885.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop&sat=0.6',
+    'https://images.pexels.com/photos/5212652/pexels-photo-5212652.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop&sat=0.6',
+    'https://images.pexels.com/photos/5373290/pexels-photo-5373290.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080&fit=crop&sat=0.6'
+];
+
+let currentImageIndex = 0;
+let isTransitioning = false;
+const heroBackground = document.querySelector('.hero-background');
+
+function rotateHeroBackground() {
+    if (isTransitioning) return;
+    isTransitioning = true;
+    
+    // Create sophisticated transition with scale and blur effects
+    heroBackground.style.transform = 'scale(1.1)';
+    heroBackground.style.filter = 'blur(8px)';
+    heroBackground.style.opacity = '0.3';
+    
+    setTimeout(() => {
+        currentImageIndex = (currentImageIndex + 1) % heroBackgroundImages.length;
+        const nextImage = new Image();
+        nextImage.onload = function() {
+            heroBackground.style.backgroundImage = `url('${heroBackgroundImages[currentImageIndex]}')`;
+            
+            // Sophisticated fade in with reverse effects
+            setTimeout(() => {
+                heroBackground.style.transform = 'scale(1)';
+                heroBackground.style.filter = 'blur(0px)';
+                heroBackground.style.opacity = '1';
+                
+                setTimeout(() => {
+                    isTransitioning = false;
+                }, 800);
+            }, 100);
+        };
+        nextImage.src = heroBackgroundImages[currentImageIndex];
+    }, 600);
+}
+
+// Initialize with first image
+window.addEventListener('load', () => {
+    if (heroBackground) {
+        heroBackground.style.backgroundImage = `url('${heroBackgroundImages[0]}')`;
+        heroBackground.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
+        heroBackground.style.transform = 'scale(1)';
+        heroBackground.style.filter = 'blur(0px)';
+        heroBackground.style.opacity = '1';
+        
+        // Start rotation after 3 seconds
+        setTimeout(() => {
+            setInterval(rotateHeroBackground, 6000);
+        }, 3000);
+    }
+});
+
 // Mobile Navigation Toggle
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
