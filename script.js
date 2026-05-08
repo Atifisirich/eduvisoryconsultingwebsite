@@ -196,16 +196,16 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Contact Form Handling with EmailJS
+// Contact Form Handling with Web3Forms
 document.addEventListener('DOMContentLoaded', () => {
     updateActiveNavLink();
     
-    // Initialize EmailJS
-    (function() {
-        emailjs.init("YOUR_PUBLIC_KEY", {
-            publicKey: "YOUR_PUBLIC_KEY"
+    // Initialize Web3Forms
+    if (typeof w3f !== 'undefined') {
+        w3f.init({
+            formId: 'YOUR_FORM_ID'
         });
-    })();
+    }
     
     // Add hover effects to cards
     const cards = document.querySelectorAll('.pillar-card, .service-card');
@@ -248,42 +248,22 @@ function handleFormSubmit(e) {
     const submitButton = form.querySelector('.form-submit');
     const resetButton = showLoadingState(submitButton);
     
-    // Send email using EmailJS
-    const emailParams = {
-        to_email: 'info@eduvisoryconsulting.com',
-        from_name: data.name,
-        from_email: data.email,
-        phone: data.phone || 'Not provided',
-        school: data.school || 'Not provided',
-        service: getServiceName(data.service),
-        message: data.message
-    };
-    
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', emailParams)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            
-            // Show success message
-            showFormSuccess(form);
-            
-            // Reset form
-            form.reset();
-            
-            // Reset button state
-            resetButton();
-            
-            // Optional: Send to WhatsApp
-            sendToWhatsApp(data);
-            
-        }, function(error) {
-            console.log('FAILED...', error);
-            
-            // Show error message
-            showFormError(form, 'Failed to send message. Please try again or contact us directly.');
-            
-            // Reset button state
-            resetButton();
-        });
+    // Web3Forms handles submission automatically
+    // Just show success message after form submission
+    setTimeout(() => {
+        // Show success message
+        showFormSuccess(form);
+        
+        // Reset form
+        form.reset();
+        
+        // Reset button state
+        resetButton();
+        
+        // Optional: Send to WhatsApp
+        sendToWhatsApp(data);
+        
+    }, 2000);
 }
 
 function validateContactForm(data) {

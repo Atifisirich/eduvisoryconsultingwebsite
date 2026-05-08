@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://web3forms.com/api/v1/client.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -238,7 +238,7 @@
                     </div>
                 </div>
                 <div class="form-wrapper">
-                    <form id="contactForm" class="contact-form" name="contactForm">
+                    <form id="contactForm" class="contact-form" action="https://web3forms.com/api/submit" method="POST" data-w3f-form-id="YOUR_FORM_ID">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required>
